@@ -2,21 +2,21 @@ let user_score = 0;
 let comp_score = 0;
 let choices = document.querySelectorAll(".rock, .paper, .scissors");
 let winButton = document.querySelector("button");
-let userDisplay = document.querySelector(".you");
-let compDisplay = document.querySelector(".comp");
+let userDisplay = document.querySelector("#user-score");
+let compDisplay = document.querySelector("#comp-score");
 
 const showWinner = (userWin, user_choice, comp_choice) => {
     if (userWin) {
       winButton.innerText = `You Won! Your ${user_choice} beats ${comp_choice}`;
       winButton.style.backgroundColor = "green";
       user_score++;
-      userDisplay.innerHTML = `<p>You : </p><span>${user_score}</span>`;
+      userDisplay.innerHTML = `<p>${user_score} </p>`;
     } else {
       console.log("You lose");
       comp_score++;
       winButton.innerText = `You lose! Comp ${comp_choice} beast your ${user_choice}`;
       winButton.style.backgroundColor = "red";
-      compDisplay.innerHTML = `<p>Comp : </p><span>${comp_score}</span>`;
+      compDisplay.innerHTML = `<p>${comp_score}</p>`;
     }
   };
   
